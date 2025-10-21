@@ -1,38 +1,90 @@
+/* Reset any conflicting styles for the background */
 .App {
-  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Remove any default background that might obscure the background */
+.App > div {
+  background: transparent !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Ensure the background canvas has proper z-index and positioning */
+.App {
+  position: relative;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Add smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Ensure proper spacing for fixed header */
+section {
+  padding-top: 80px;
+  margin-top: -80px;
+}
+
+/* Reduced glassmorphism for better background visibility */
+.glass-effect {
+  background: rgba(20, 48, 87, 0.05) !important;
+  backdrop-filter: blur(4px) saturate(120%);
+  -webkit-backdrop-filter: blur(4px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.05);
+}
+
+.glass-card {
+  background: rgba(20, 48, 87, 0.08) !important;
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.08);
+}
+
+/* Enhanced navbar glassmorphism - minimal */
+header.glass-effect {
+  background: rgba(20, 48, 87, 0.08) !important;
+  backdrop-filter: blur(6px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(6px) saturate(120%) !important;
+ border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.05) !important;
+  background-clip: padding-box !important;
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Ensure proper spacing for fixed header */
+section {
+  padding-top: 80px;
+  margin-top: -80px;
+}
+
+/* Ensure proper z-index for elements */
+.fixed-header {
+  z-index: 50;
+}
+
+/* Subtle hover effects */
+.glass-hover:hover {
+  background: rgba(20, 48, 87, 0.12) !important;
+ backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+}
+
+/* Enhanced navbar link hover effects */
+nav a:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 0 8px rgba(222, 160, 143, 0.3);
 }
