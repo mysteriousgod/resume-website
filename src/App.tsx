@@ -38,7 +38,7 @@ function App() {
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
-        <ContactSection />
+        {/* <ContactSection /> */}
         <Footer />
       </div>
     </div>

@@ -1,5 +1,8 @@
 import React from 'react';
 import SpotlightCard from './SpotlightCard';
+import { motion } from 'framer-motion';
+import { Github, Linkedin, Mail } from 'lucide-react';
+
 
 const HeroSection = () => {
   return (
@@ -8,22 +11,41 @@ const HeroSection = () => {
         <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
           <h1 className="text-5xl font-bold mb-4 text-[--text-light-color]">React Developer</h1>
           <p className="text-xl mb-8 text-[--subtext-light]">5+ Years of Professional Experience</p>
-          <div className="flex justify-center space-x-4">
-            <a
-              href="https://github.com/mysteriousgod"
+          <motion.div
+            className="flex gap-6 justify-center mt-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <motion.a
+              href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[--primary-color]/60 hover:bg-[--secondary-color]/80 text-white px-6 py-3 rounded-lg transition-all duration-300 backdrop-blur-sm border border-white/20 hover:transform hover:-translate-y-1"
+              className="glass glass-hover p-3 rounded-full"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
-              GitHub Profile
-            </a>
-            <a
-              href="#projects"
-              className="bg-[--accent-color]/60 hover:bg-[--modal-primary-color]/80 text-white px-6 py-3 rounded-lg transition-all duration-300 backdrop-blur-sm border border-white/20 hover:transform hover:-translate-y-1"
+              <Github className="w-6 h-6" />
+            </motion.a>
+            {/* <motion.a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass glass-hover p-3 rounded-full"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
-              View Projects
-            </a>
-          </div>
+              <Linkedin className="w-6 h-6" />
+            </motion.a> */}
+            <motion.a
+              href="mailto:paritosh.pychopath@gmail.com?subject=Paritosh%20You%20are%20Hired"
+              className="glass glass-hover p-3 rounded-full"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Mail className="w-6 h-6" />
+            </motion.a>
+          </motion.div>
         </SpotlightCard>
       </div>
     </section>
